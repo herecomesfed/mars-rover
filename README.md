@@ -83,7 +83,7 @@ This is the core of the application. It accept the following parameters:
 ##### Public Methods
 
 -\_readInstructions(instruction:string): Read and perform a single instruction
--\_startSimulation(callbackAfterSingleCommand: void, callbackAfterRowOfCommands: void, callbackAfterLoop: void): Read and perform all instructions, then provide an output string
+-\_startSimulation(callbackAfterSingleCommand: function, callbackAfterRowOfCommands: function, callbackAfterLoop: function): Read and perform all instructions, then provide an output string
 -\_Accepts three optional callback function for each stage of the simulation (after each command, after a string of commands, after simulation)
 
 ##### Getters
