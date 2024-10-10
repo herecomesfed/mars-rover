@@ -1,6 +1,6 @@
 # Mars Rover Kata
 
-Simulation of a vehicle on a planet according to the rules of [Mars Rover Kata](https://kata-log.rocks/mars-rover-kata) rules.
+Simulation of a vehicle on a planet according to the rules of [Mars Rover Kata](https://kata-log.rocks/mars-rover-kata).
 
 ## Table of contents
 
