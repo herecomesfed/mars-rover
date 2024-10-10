@@ -7,7 +7,7 @@ Simulation of a vehicle on a planet according to the rules of [Mars Rover Kata](
 - [Overview](#overview)
   - [The application](#the-application)
 - [My process](#my-process)
-  - [Project Bootstrapper](#project-boostrapper)
+  - [Project Bootstrapper](#project-bootstrapper)
   - [How to use on your device](#how-to-use-on-your-device)
   - [Built with](#built-with)
 - [The Classes](#the-classes)
