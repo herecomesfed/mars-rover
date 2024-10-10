@@ -70,7 +70,6 @@ const iconDirections = {
 const extractGridSize = (splittedRows) => {
   const [sizeLabel, x, y] = splittedRows[1].split(" ");
   sizeLabel !== "Size" && (errorOnUpload = true);
-  console.log(errorOnUpload);
   gridSize = {
     x: Number(x) > 7 || isNaN(Number(x)) ? 5 : Number(x),
     y: Number(y) > 6 || isNaN(Number(y)) ? 4 : Number(y),
