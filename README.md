@@ -75,22 +75,21 @@ This is the core of the application. It accept the following parameters:
 
 ##### Private Methods
 
--\_changeDirection(instruction:string): Turns the rover based on the instruction
--\_moveRover(instruction: string): Move the rover based on the instruction (F: direction + 1, B: direction - 1)
--\_isThereObstacle: Checks if rover will touch an obstacle receiving the next command
--\_updateRoverOutput: Will update the rover when a set of commands is finished
+- `_changeDirection(instruction: string):` Turns the rover based on the instruction.
+- `_moveRover(instruction: string):` Move the rover based on the instruction (F: direction + 1, B: direction - 1).
+- `_isThereObstacle():` Checks if rover will touch an obstacle receiving the next command.
+- `_updateRoverOutput():` Will update the rover when a set of commands is finished.
 
 ##### Public Methods
 
--\_readInstructions(instruction:string): Read and perform a single instruction
--\_startSimulation(callbackAfterSingleCommand: function, callbackAfterRowOfCommands: function, callbackAfterLoop: function): Read and perform all instructions, then provide an output string
--\_Accepts three optional callback function for each stage of the simulation (after each command, after a string of commands, after simulation)
+- `_readInstructions(instruction: string):` Read and perform a single instruction.
+- `_startSimulation(callbackAfterSingleCommand: function, callbackAfterRowOfCommands: function, callbackAfterLoop: function):` Read and perform all instructions, then provide an output string. Accepts three optional callback functions for each stage of the simulation (after each command, after a string of commands, after simulation).
 
 ##### Getters
 
--getPosition(): return the rover (x,y)
--getDirection(): return the rover direction
--getFullPosition(): return the rover (x,y,direction)
+- `getPosition():` Returns the rover's position as (x, y).
+- `getDirection():` Returns the rover's direction.
+- `getFullPosition():` Returns the rover's full position as (x, y, direction).
 
 ### Mars
 
