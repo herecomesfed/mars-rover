@@ -2,12 +2,115 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/mars.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Mars Rover</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header>
+        <h1>Mars Rover</h1>
+        <div class="button-group content-center">
+          <button class="upload-instructions" data-active="true">
+            Upload Instructions
+          </button>
+          <a class="reload btn" href="/" data-active="false">Reload</a>
+          <button class="docs-btn has-no-bg">Docs</button>
+        </div>
+      </header>
+      <main>
+        <div class="content" data-active="false">
+          <!-- Instructions -->
+          <div class="instructions-box">
+            <p>Input</p>
+            <div class="instructions"></div>
+          </div>
+          <div id="grid-container">
+            <div id="world-grid"></div>
+            <div class="start-container" data-active="true">
+              <p>Ready to start</p>
+              <button class="start-btn">Start Simulation!</button>
+            </div>
+            <div class="restart-container" data-active="false">
+              <button class="restart-btn">New Simulation</button>
+            </div>
+          </div>
+          <div class="output-box">
+            <p>Output</p>
+            <div class="output"></div>
+            <a class="download-output btn" data-active="false">
+              Download Output Txt
+            </a>
+          </div>
+        </div>
+        <div class="popup error-popup" data-active="false">
+          <h2>Error detected!</h2>
+          <p class="error-message"></p>
+          <a href="/" class="btn">Reload</a>
+        </div>
+        <div class="overlay" data-active="false"></div>
+        <div class="popup docs-popup" data-active="false">
+          <div class="docs-popup-content">
+            <h2>Mars Rover Docs</h2>
+            <p>
+              These are very simple docs to help you manage this Mars Rover app
+            </p>
+            <h3>How to use it</h3>
+            <ul>
+              <li>Step 1: Upload instructions (It must be a .txt file)</li>
+              <li>Step 2: Start simulation</li>
+              <li>Step 3: (optional) Download output txt file</li>
+              <li>Step 4: Start a new simulation if you want to</li>
+            </ul>
+            <span>****************************</span>
+            <h4 class="red-text">Be careful!</h4>
+            <p>The input .txt file should follow some basic rules:</p>
+            <ul>
+              <li>
+                The 2nd line must start with "Size". <br />(x,y) info should be
+                separated by a space
+                <small style="display: block"
+                  >*To avoid problems with the ui, the current application
+                  supports these max values: (7,6)</small
+                >
+              </li>
+              <li>
+                Obstacle lines must start with "Obstacle" and (x,y) should be
+                separated by a space*
+                <small style="display: block"
+                  >*In case of invalid input [(x,y) greater than grid, invalid
+                  (x,y)] the obstacle will be ignored and not showed on the
+                  map</small
+                >
+              </li>
+              <li>
+                Command lines must start with one of accepted command (L, R, F,
+                B) and should contain just accepted commands: Invalid commands
+                will be ignored by the rover
+              </li>
+            </ul>
+            <p>
+              For more information please refer to the instructions.txt file
+              included with the application.
+            </p>
+            <h4>Instruction .txt example</h4>
+            <code
+              >Grid<br />
+              Size 5 4 <br />
+              Obstacle 2 0 <br />
+              Obstacle 0 3 <br />
+              Obstacle 3 2 <br />
+              Commands <br />
+              RFF <br />
+              RF <br />
+              LFRFFLFFFLL</code
+            >
+          </div>
+          <span class="close-icon">&times;</span>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
