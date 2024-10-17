@@ -3,11 +3,11 @@ import { MarsRover } from "../classes/MarsRover";
 import { Mars } from "../classes/Mars";
 import { Obstacle } from "../classes/Obstacle";
 
-const createNewMarsRover = (direction) => {
+const createNewMarsRover = (direction, x = 0, y = 0) => {
   const grid = new Mars(5, 4);
   const obstacle1 = new Obstacle(3, 3);
   const obstacle2 = new Obstacle(0, 1);
-  const rover = new MarsRover(0, 0, direction, grid, [obstacle1, obstacle2]);
+  const rover = new MarsRover(x, y, direction, grid, [obstacle1, obstacle2]);
   return rover;
 };
 
@@ -19,9 +19,9 @@ describe("Mars rover movements without grid constraint", () => {
   });
 
   test("move rover in south direction", () => {
-    const rover = createNewMarsRover("S");
+    const rover = createNewMarsRover("S", 0, 1);
     rover._moveRover();
-    expect(rover.getPosition().y).toEqual(-1);
+    expect(rover.getPosition().y).toEqual(0);
   });
 
   test("move rover in east direction", () => {
@@ -31,9 +31,9 @@ describe("Mars rover movements without grid constraint", () => {
   });
 
   test("move rover in west direction", () => {
-    const rover = createNewMarsRover("W");
+    const rover = createNewMarsRover("W", 1, 0);
     rover._moveRover();
-    expect(rover.getPosition().x).toEqual(-1);
+    expect(rover.getPosition().x).toEqual(0);
   });
 
   test("rotate rover left", () => {
@@ -59,11 +59,11 @@ describe("Mars rover movements without grid constraint", () => {
   });
 
   test("simulate one backward movement", () => {
-    const rover = createNewMarsRover("N");
+    const rover = createNewMarsRover("N", 0, 1);
     rover._moveRover("B");
     expect(rover.getFullPosition()).toEqual({
       x: 0,
-      y: -1,
+      y: 0,
       direction: "N",
     });
   });
