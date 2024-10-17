@@ -89,16 +89,11 @@ describe("Mars rover movements without grid constraint", () => {
 
 describe("Simulate movements with grid", () => {
   test("simulate touch limit on x", () => {
-    createNewMarsRover("N");
-    const commands = ["R", "F", "F", "F", "F", "F"];
+    createNewMarsRover("E");
+    const commands = ["F", "F", "F", "F", "F"];
     commands.forEach((command) => {
-      if (command === "L" || command === "R") {
-        rover._changeDirection(command);
-      }
-      if (command === "F" || command === "B") {
-        rover._moveRover(command);
-        rover._checkGridLimits();
-      }
+      rover._moveRover(command);
+      rover._checkGridLimits();
     });
     expect(rover.getFullPosition().x).toEqual(0);
   });
