@@ -34,6 +34,7 @@ export class MarsRover {
     this.direction === "S" && (this.y -= movement);
     this.direction === "E" && (this.x += movement);
     this.direction === "W" && (this.x -= movement);
+    this._checkGridLimits();
   }
 
   _checkGridLimits() {
@@ -78,7 +79,6 @@ export class MarsRover {
     if (instruction === "F" || instruction === "B") {
       if (!this._isThereObstacle(instruction)) {
         this._moveRover(instruction);
-        this._checkGridLimits();
       }
     }
   }

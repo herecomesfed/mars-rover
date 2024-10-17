@@ -93,7 +93,6 @@ describe("Simulate movements with grid", () => {
     const commands = ["F", "F", "F", "F", "F"];
     commands.forEach((command) => {
       rover._moveRover(command);
-      rover._checkGridLimits();
     });
     expect(rover.getFullPosition().x).toEqual(0);
   });
@@ -101,7 +100,6 @@ describe("Simulate movements with grid", () => {
   test("simulate negative limit on x", () => {
     const rover = createNewMarsRover("W");
     rover._moveRover("F");
-    rover._checkGridLimits();
 
     expect(rover.getFullPosition().x).toEqual(4);
   });
@@ -111,7 +109,6 @@ describe("Simulate movements with grid", () => {
     const commands = ["F", "F", "F", "F"];
     commands.forEach((command) => {
       rover._moveRover(command);
-      rover._checkGridLimits();
     });
     expect(rover.getFullPosition().y).toEqual(0);
   });
@@ -119,7 +116,6 @@ describe("Simulate movements with grid", () => {
   test("simulate negative y limit", () => {
     const rover = createNewMarsRover("S");
     rover._moveRover("S");
-    rover._checkGridLimits();
     expect(rover.getFullPosition().y).toEqual(3);
   });
 });
