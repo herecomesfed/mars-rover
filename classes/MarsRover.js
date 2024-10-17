@@ -38,10 +38,9 @@ export class MarsRover {
   }
 
   _checkGridLimits() {
-    this.x >= this.limits.x && (this.x = 0);
-    this.x < 0 && (this.x = this.limits.x - 1);
-    this.y >= this.limits.y && (this.y = 0);
-    this.y < 0 && (this.y = this.limits.y - 1);
+    const newPosition = this.limits.checkGridLimits(this.x, this.y);
+    this.x = newPosition.roverX;
+    this.y = newPosition.roverY;
   }
 
   _isThereObstacle(command) {
