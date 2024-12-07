@@ -66,7 +66,7 @@ const extractRoverInstructions = (splittedRows) => {
 
 const extractTxtValues = (contents) => {
   // Extract values from the fil
-  const splittedRows = contents.split("\r\n");
+  const splittedRows = contents.split("\n");
   // Extract Grid Informations
   extractGridSize(splittedRows);
   // Extract Obstacles Coords
