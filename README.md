@@ -47,7 +47,7 @@ The application should:
 
 ### Project Bootstrapper
 
-I used Vite ad bootstrapper, it helped me to have a nice and organised directory without too much effort. It also gave me a ready to use local dev environment, bundling and polyfilling
+I used Vite as bootstrapper, it helped me to have a nice and organised directory without too much effort. It also gave me a ready to use local dev environment, bundling and polyfilling
 
 ### How to use on your device
 
